@@ -1,0 +1,46 @@
+<html>
+
+	<head>
+		<title>Final Project</title>
+		<style>
+		body {
+				background-color: silver;
+				width: 600px;
+				margin-right: auto;
+				margin-left: auto;
+				margin-top: 100px;
+				font-size: 30px;
+			}
+		img {
+			width: 550px;
+		}
+		h1 {
+			color: #009eff;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>Final Project</h1>
+		
+		<img id = 'image1' = src="https://static.vecteezy.com/system/resources/previews/018/914/291/non_2x/baseball-equipment-set-collection-vector.jpg">
+		
+		<a href="detail.html">Click here to see the equipment items!</a>
+	
+		<ul id="item-list"></ul>
+		
+	<script>
+	
+		var my_name = "Chase"; 
+		var my_age = 19;
+		var school_major = "Business Intelligence and Technology";
+		var school = "Midland University";
+		fetch('http://157.230.214.215/api/chase_candy').then(result => result.json()).then (data => {
+					console.log(data);
+				})
+		var chase_candy = ["skittles", "airheads", "reeses cups"];
+		console.log(chase_candy[0]);
+	</script>
+	
+	</body>
+
+</html>
