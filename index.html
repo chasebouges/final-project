@@ -34,11 +34,19 @@
 		var my_age = 19;
 		var school_major = "Business Intelligence and Technology";
 		var school = "Midland University";
-		fetch('http://157.230.214.215/api/chase_candy').then(result => result.json()).then (data => {
-					console.log(data);
-				})
-		var chase_candy = ["skittles", "airheads", "reeses cups"];
-		console.log(chase_candy[0]);
+		fetch("http://157.230.214.215/api/chase_candy")
+            .then(response => response.json())
+            .then(data => {
+                const candyList = document.getElementById("candy-list");
+                data.forEach(candy => {
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = `detail.html?id=${candy.id}`;
+                    link.textContent = `${candy.Manufacturer} (${candy.Calories})`;
+                    listItem.appendChild(link);
+                    candyList.appendChild(listItem);
+                });
+            })
 	</script>
 	
 	</body>
